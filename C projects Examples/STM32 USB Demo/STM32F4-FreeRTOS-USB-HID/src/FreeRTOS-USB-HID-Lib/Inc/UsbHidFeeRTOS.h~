@@ -1,0 +1,70 @@
+/*
+ * UsbHidFeeRTOS.h
+ *
+ * @file    Demonstrations/Src/stm32f4xx_it.c
+ * @author  Davide Piscopo, Andrea Primativo
+ * @date    4-June-2015
+ *
+ * @brief   Questa Libreria fornice un interfaccia per gestire lo scambio di Report tra un USB Host
+ *  		ed un USB device STM32F4 classe HID sottoclasse Mouse.
+ *  		Il Report Descriptor associato deve definire un Mouse con:
+ *  		1 Bottone. Range logico (0/1)
+ *  		2 assi(X Y) Range logico(-127/127)
+ */
+
+#ifndef FREERTOS_USB_HID_LIB_INC_USBHIDFEERTOS_H_
+#define FREERTOS_USB_HID_LIB_INC_USBHIDFEERTOS_H_
+#include <stdint.h>
+
+#define STEP 1
+
+typedef struct{
+	uint8_t button;
+	uint8_t X;
+	uint8_t Y;
+}FreeRTOS_USB_MOUSE_REPORT;
+
+/*
+ * @brief	MouseInit() inizializza il  componente USB
+ */
+void MouseInit();
+
+/*
+ * @brief	ButtonInit(..) Inizializza il campo relativo alla pressione del bottone ad un valore consistente
+ */
+void ButtonInit(FreeRTOS_USB_MOUSE_REPORT *report);
+/*
+ * @brief	XInit(..) Inizializza il campo relativo alla posizione sull'asse X ad un valore consistente
+ */
+void XInit(FreeRTOS_USB_MOUSE_REPORT *report);
+/*
+ * @brief	YInit(..) Inizializza il campo relativo alla posizione sull'asse X ad un valore consistente
+ */
+void YInit(FreeRTOS_USB_MOUSE_REPORT *report);
+/*
+ * @brief	ReportInit(..) Inizializza ad un valore consistente la struct FreeRTOS_USB_MOUSE_REPORT
+ */
+void ReportInit(FreeRTOS_USB_MOUSE_REPORT *report);
+/*
+ * @brief	Click(..) Imposta il campo FreeRTOS_USB_MOUSE_REPORT.button come "premuto"
+ */
+void Click(FreeRTOS_USB_MOUSE_REPORT *report);
+/*
+ * @brief	DeClick(..) Imposta il campo FreeRTOS_USB_MOUSE_REPORT.button come "non premuto"
+ */
+void DeClick(FreeRTOS_USB_MOUSE_REPORT *report);
+/*
+ * @brief	Xmove(..) Imposta il campo FreeRTOS_USB_MOUSE_REPORT.X ad un valore distance*STEP
+ */
+void Xmove(FreeRTOS_USB_MOUSE_REPORT *report, int8_t distance);
+/*
+ * @brief	Ymove(..) Imposta il campo FreeRTOS_USB_MOUSE_REPORT.X ad un valore distance*STEP
+ */
+void Ymove(FreeRTOS_USB_MOUSE_REPORT *report, int8_t distance);
+/*
+ * @brief	SendReport(..) Mette in coda sul chip USB un report da inviare all'host
+ */
+void SendReport(FreeRTOS_USB_MOUSE_REPORT *report);
+
+
+#endif /* FREERTOS_USB_HID_LIB_INC_USBHIDFEERTOS_H_ */

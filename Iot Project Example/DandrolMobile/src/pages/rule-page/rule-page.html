@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar>
+	<button ion-button menuToggle icon-only>
+		<ion-icon name='menu'></ion-icon>
+	</button>
+    <ion-title>
+      Active Rules
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding [ngSwitch]="serverRuleDidLoad">
+	<ion-list *ngSwitchCase="true" class="serverRule">
+		<a ion-item *ngFor="let rule of serverRule" detail-push (click)="goToRuleDetail(rule)">
+		<h3>Rule ID: {{rule.ruleID}}</h3>
+		<p>Rule Target EndPoint: {{rule.actionEndpoint}}</p>
+		<p>Rule Target Resource: {{rule.actionTarget}}</p>
+		</a>
+	</ion-list>	
+	<p *ngSwitchCase="false">Can't retrieve rules from server! :(</p>
+	<ion-fab right bottom>
+		<button ion-fab mini (click)="PostStubRule()">+</button>
+	</ion-fab>
+</ion-content>

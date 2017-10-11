@@ -1,0 +1,68 @@
+\hypertarget{group__HAL__MSP__Private__Functions}{\section{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions}
+\label{group__HAL__MSP__Private__Functions}\index{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions@{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions}}
+}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group__HAL__MSP__Private__Functions_ga0e553b32211877322f949b14801bbfa7}{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init} (U\-A\-R\-T\-\_\-\-Handle\-Type\-Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em U\-A\-R\-T M\-S\-P Initialization This function configures the hardware resources used in this example\-: \end{DoxyCompactList}\item 
+void \hyperlink{group__HAL__MSP__Private__Functions_ga718f39804e3b910d738a0e1e46151188}{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init} (U\-A\-R\-T\-\_\-\-Handle\-Type\-Def $\ast$huart)
+\begin{DoxyCompactList}\small\item\em U\-A\-R\-T M\-S\-P De-\/\-Initialization This function frees the hardware resources used in this example\-: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__HAL__MSP__Private__Functions_ga718f39804e3b910d738a0e1e46151188}{\index{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions@{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions}!H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init@{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init}}
+\index{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init@{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init}!HAL_MSP_Private_Functions@{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions}}
+\subsubsection[{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-De\-Init (
+\begin{DoxyParamCaption}
+\item[{U\-A\-R\-T\-\_\-\-Handle\-Type\-Def $\ast$}]{huart}
+\end{DoxyParamCaption}
+)}}\label{group__HAL__MSP__Private__Functions_ga718f39804e3b910d738a0e1e46151188}
+
+
+U\-A\-R\-T M\-S\-P De-\/\-Initialization This function frees the hardware resources used in this example\-: 
+
+
+\begin{DoxyItemize}
+\item Disable the Peripheral's clock
+\item Revert G\-P\-I\-O and N\-V\-I\-C configuration to their default state 
+\begin{DoxyParams}{Parameters}
+{\em huart} & U\-A\-R\-T handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyItemize}\hypertarget{group__HAL__MSP__Private__Functions_ga0e553b32211877322f949b14801bbfa7}{\index{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions@{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions}!H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init@{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init}}
+\index{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init@{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init}!HAL_MSP_Private_Functions@{H\-A\-L\-\_\-\-M\-S\-P\-\_\-\-Private\-\_\-\-Functions}}
+\subsubsection[{H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init}]{\setlength{\rightskip}{0pt plus 5cm}void H\-A\-L\-\_\-\-U\-A\-R\-T\-\_\-\-Msp\-Init (
+\begin{DoxyParamCaption}
+\item[{U\-A\-R\-T\-\_\-\-Handle\-Type\-Def $\ast$}]{huart}
+\end{DoxyParamCaption}
+)}}\label{group__HAL__MSP__Private__Functions_ga0e553b32211877322f949b14801bbfa7}
+
+
+U\-A\-R\-T M\-S\-P Initialization This function configures the hardware resources used in this example\-: 
+
+
+\begin{DoxyItemize}
+\item Peripheral's clock enable
+\item Peripheral's G\-P\-I\-O Configuration
+\item N\-V\-I\-C configuration for U\-A\-R\-T interrupt request enable 
+\begin{DoxyParams}{Parameters}
+{\em huart} & U\-A\-R\-T handle pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+
+\end{DoxyItemize}

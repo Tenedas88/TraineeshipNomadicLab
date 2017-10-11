@@ -1,0 +1,1 @@
+                        {"RuleID":1733884766,"condition1":{"endpoint":"Andrea-PC","target":"3303/0/5700","readValue":20.0,"operator":"\u003d","value":20.0},"condition2":{"endpoint":"Andrea-PC","target":"3303/0/5700","readValue":-1.0,"operator":"\u003e","value":30.0},"actionEndpoint":"Andrea-PC","actionTarget":"3303/0/5700"}

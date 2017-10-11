@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+	<button ion-button menuToggle icon-only>
+		<ion-icon name='menu'></ion-icon>
+	</button>
+    <ion-title>
+      Connected EndPoints
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding [ngSwitch]="serverEndPointDidLoad">
+  	<ion-list *ngSwitchCase="true" class="serverRes">
+		<a ion-item *ngFor="let endPointDesc of serverRes" detail-push (click)="goToDeviceDetail(endPointDesc)" >
+		<h3>EndPoint: {{endPointDesc.endpoint}}</h3>
+		</a>
+	</ion-list>
+	<p *ngSwitchCase="false">Can't retrieve Endpoints information from server! :(</p>
+</ion-content>

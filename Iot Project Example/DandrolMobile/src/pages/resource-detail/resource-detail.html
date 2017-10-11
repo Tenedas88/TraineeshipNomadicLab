@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Resources Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding [ngSwitch]="serverResDidLoad">
+	<p *ngSwitchCase="true">Object Address: {{currentResPath}}</p>
+	<p *ngSwitchCase="true">Object Status: {{currentResDetail.status}}</p>
+	<p *ngSwitchCase="true">Instance ID: {{currentResDetail.content.id}}</p>
+	<ion-list *ngSwitchCase="true" class="resources">
+		<a ion-item *ngFor="let currentRes of currentResArray" detail-push>
+		<h3>Resource ID: {{currentRes.id}}</h3>
+		<p>Resource Value: {{currentRes.value}}</p>
+		</a>
+	</ion-list>
+	<p *ngSwitchCase="false">Resource not responding!</p>
+	<button ion-button (click)="updateResource()">Update values</button>
+</ion-content>

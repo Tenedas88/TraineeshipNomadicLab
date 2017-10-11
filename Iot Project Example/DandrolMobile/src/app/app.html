@@ -1,0 +1,10 @@
+<ion-menu [content]="mycontent" persistent = true>
+  <ion-content>
+    <ion-list>
+		<button ion-item (click)="PushHomePage()">Devices</button>
+		<button ion-item (click)="PushRulePage()">Rules</button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

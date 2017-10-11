@@ -1,0 +1,124 @@
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import  'rxjs/add/operator/toPromise';
+
+import { Http, Response, RequestOptions }			from '@angular/http';
+
+
+	getEndPoint(): Promise<any>{
+		const url = 'http://192.168.43.160:8080/ProvaServlet1/ProvaHttpServlet';
+		return this.http.post(url)
+			.toPromise()
+			.then(response => response.json().data);
+	}
+  
+  ParseEndPoint(){
+  this.getEndPoint().then(res => this.serverRes = res);
+  }
+  
+  serverRes: any = {
+		conditioncount: "2",
+		srcendpoint1: "Andrea-PC",
+		readvalue1: "",
+		operator1: "<",
+		targetvalue1: "10.5",
+		catop1: "AND",
+		srcendpoint2: "Andrea-PC",
+		readvalue2: "",
+		operator2: ">",
+		targetvalue2: "5",
+		catop2: "",
+		};
+		
+		  serverRes: any = {
+		username:"Tenedas",
+		password:"Merda",
+		nome:"Davide",
+		cognome:"Piscopo",
+		nickName:"Tenedas",
+		email:"candoran@gmail.com"
+		};
+		
+		this.serverCom.postObsReq().then(data => this.observeRes.prova = JSON.stringify(data));
+		
+		  subscribeReq() {
+        this.http.get("http://192.168.43.160:8080/api/automations")
+        .subscribe(data => {
+				this.serverRes = data.json();
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
+    } 
+	
+				this.source = new EventSource("http://192.168.43.160:8080/event?ep=Alfred");
+			this.source.addEventListener('NOTIFICATION', function(e){
+				this.Ingresso.desc = "sono dentro";
+				this.ProvaE.desc = JSON.stringify(e.data.json());
+			});
+			}
+			
+					this.http.post("http://192.168.43.160:8080/api/clients/Alfred/3303/0/5700/observe",null)
+		 .subscribe(data => {
+				this.observeRes = data.json();
+				this.ProvaE.desc = JSON.stringify(data);
+        }, error => {
+            console.log(JSON.stringify(error.json()));
+        });
+		
+			<button ion-button (click)="makePostRule()">POST RULE</button>
+	<button ion-button (click)="makeGetRequest()">GET ENDPOINT</button>
+	<button ion-button (click)="makePostRequest()">POST ENDPOINT</button>
+
+	<p>{{observeRes.status}}</p>
+	<p>{{observeRes.content.id}}</p>
+	<p>{{observeRes.content.value}}</p>
+	<p>{{Ingresso.desc}}</p>
+	<p>{{ProvaE.desc}}</p>
+	<p>{{eventRes.ep}}</p>
+	<p>{{eventRes.res}}</p>
+	<p>{{eventRes.val.id}}</p>
+	<p>{{eventRes.val.value}}</p>
+
+	<p>{{serverRes[0].endpoint}}</p>
+	<p>{{serverRes[0].endpoint}}</p>
+	<p>{{serverRes[0].registrationId}}</p>
+	<p>{{serverRes[0].registrationDate}}</p>
+	<p>{{serverRes[0].lastUpdate}}</p>
+	<p>{{serverRes[0].address}}</p>
+	<p>{{serverRes[0].lwM2mVersion}}</p>
+	<p>{{serverRes[0].lifetime}}</p>
+	<p>{{serverRes[0].bindingMode}}</p>
+	<p>{{serverRes[0].rootPath}}</p>
+	<p>{{serverRes[0].objectLinks[0].url}}</p>
+	<p>{{serverRes[0].secure}}</p>
+	<p>{{serverRes[0].additionalRegistrationAttributes}}</p>
+	<p></p>
+	<p>{{serverResRule[1].ruleID}}</p>
+	<p>{{serverResRule[1].conditions[0].endpoint}}</p>
+	<p>{{serverResRule[1].conditions[0].target}}</p>
+	<p>{{serverResRule[1].conditions[0].readValue}}</p>
+	<p>{{serverResRule[1].conditions[0].operator}}</p>
+	<p>{{serverResRule[1].conditions[0].value}}</p>
+	<p>{{serverResRule[1].conditions[0].concatenationOp}}</p>
+	<p>{{serverResRule[1].conditions[1].endpoint}}</p>
+	<p>{{serverResRule[1].conditions[1].target}}</p>
+	<p>{{serverResRule[1].conditions[1].readValue}}</p>
+	<p>{{serverResRule[1].conditions[1].operator}}</p>
+	<p>{{serverResRule[1].conditions[1].value}}</p>
+	<p>{{serverResRule[1].conditions[1].concatenationOp}}</p>
+	<p>{{serverResRule[1].actionEndpoint}}</p>
+	<p>{{serverResRule[1].actionTarget}}</p>
+	<p></p>
+	
+	
+		<ion-list class="currentRuleConditions">
+		<a ion-item *ngFor="let condition of currentRuleConditions" detail-push">
+		<h3>{{condition.endpoint}}</h3>
+		<p>{{condition.target}}</p>
+		<p>{{condition.readValue}}</p>
+		<p>{{condition.operator}}</p>
+		<p>{{condition.value}}</p>
+		<p>{{condition.concatenationOp}}</p>
+		</a>
+	</ion-list>
